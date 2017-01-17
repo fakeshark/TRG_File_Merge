@@ -51,6 +51,7 @@
             this.gbxSaveLocation = new System.Windows.Forms.GroupBox();
             this.lblSaveFileLocation = new System.Windows.Forms.Label();
             this.gbxListCount = new System.Windows.Forms.GroupBox();
+            this.btnSetPath = new System.Windows.Forms.Button();
             this.gbxMergeOptions.SuspendLayout();
             this.gbxSaveLocation.SuspendLayout();
             this.gbxListCount.SuspendLayout();
@@ -68,11 +69,13 @@
             // 
             // btnMergeExport
             // 
+            this.btnMergeExport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMergeExport.BackgroundImage")));
             this.btnMergeExport.Location = new System.Drawing.Point(853, 499);
             this.btnMergeExport.Name = "btnMergeExport";
             this.btnMergeExport.Size = new System.Drawing.Size(124, 110);
             this.btnMergeExport.TabIndex = 15;
-            this.btnMergeExport.Text = "Merge and &Export ";
+            this.btnMergeExport.Text = "&Export ";
+            this.btnMergeExport.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnMergeExport.UseVisualStyleBackColor = true;
             this.btnMergeExport.Click += new System.EventHandler(this.btnMergeExport_Click);
             // 
@@ -151,7 +154,7 @@
             // lblActiveFiles
             // 
             this.lblActiveFiles.AutoSize = true;
-            this.lblActiveFiles.Location = new System.Drawing.Point(11, 52);
+            this.lblActiveFiles.Location = new System.Drawing.Point(10, 52);
             this.lblActiveFiles.Name = "lblActiveFiles";
             this.lblActiveFiles.Size = new System.Drawing.Size(79, 13);
             this.lblActiveFiles.TabIndex = 17;
@@ -213,7 +216,7 @@
             this.btnSaveClose.BackColor = System.Drawing.Color.NavajoWhite;
             this.btnSaveClose.Location = new System.Drawing.Point(414, 13);
             this.btnSaveClose.Name = "btnSaveClose";
-            this.btnSaveClose.Size = new System.Drawing.Size(105, 65);
+            this.btnSaveClose.Size = new System.Drawing.Size(105, 36);
             this.btnSaveClose.TabIndex = 3;
             this.btnSaveClose.Text = "&Save && Close";
             this.btnSaveClose.UseVisualStyleBackColor = false;
@@ -251,6 +254,7 @@
             // 
             // gbxSaveLocation
             // 
+            this.gbxSaveLocation.Controls.Add(this.btnSetPath);
             this.gbxSaveLocation.Controls.Add(this.lblSaveFileLocation);
             this.gbxSaveLocation.Controls.Add(this.btnSaveClose);
             this.gbxSaveLocation.Location = new System.Drawing.Point(451, 8);
@@ -263,7 +267,7 @@
             // lblSaveFileLocation
             // 
             this.lblSaveFileLocation.AutoSize = true;
-            this.lblSaveFileLocation.Location = new System.Drawing.Point(6, 22);
+            this.lblSaveFileLocation.Location = new System.Drawing.Point(6, 47);
             this.lblSaveFileLocation.Name = "lblSaveFileLocation";
             this.lblSaveFileLocation.Size = new System.Drawing.Size(16, 13);
             this.lblSaveFileLocation.TabIndex = 20;
@@ -279,6 +283,16 @@
             this.gbxListCount.TabIndex = 20;
             this.gbxListCount.TabStop = false;
             this.gbxListCount.Text = "List item Count:  ";
+            // 
+            // btnSetPath
+            // 
+            this.btnSetPath.Location = new System.Drawing.Point(414, 55);
+            this.btnSetPath.Name = "btnSetPath";
+            this.btnSetPath.Size = new System.Drawing.Size(105, 23);
+            this.btnSetPath.TabIndex = 21;
+            this.btnSetPath.Text = "Set Save Path";
+            this.btnSetPath.UseVisualStyleBackColor = true;
+            this.btnSetPath.Click += new System.EventHandler(this.btnSetPath_Click);
             // 
             // frmFileMerge
             // 
@@ -336,6 +350,7 @@
         private System.Windows.Forms.GroupBox gbxSaveLocation;
         private System.Windows.Forms.Label lblSaveFileLocation;
         private System.Windows.Forms.GroupBox gbxListCount;
+        private System.Windows.Forms.Button btnSetPath;
     }
 }
 

@@ -19,8 +19,11 @@ namespace TRG_File_Merge
         string filesFolderPath = "";
         string fileFolderPath = "";
         string text = "";
+        string saveText = "";
+        string listText = "testing";
         string delimiter = "";
-        string saveFilePath = "";
+        string savePath = "";
+        //string savePath = "";
 
         public frmFileMerge()
         {
@@ -28,7 +31,6 @@ namespace TRG_File_Merge
             //look for and apply ini file
             UpdateLists();
             lbxFileList.HorizontalScrollbar = true;
-            LoadSaveFile();
         }
 
         private void btnAddFile_Click(object sender, EventArgs e)
@@ -50,14 +52,34 @@ namespace TRG_File_Merge
         private void WriteToSaveFile ()
         {
             //create a save file with the current listbox items in it
+            var saveFile = new SaveFileDialog();
+
+            saveFile.Filter = "sav files (*.sav)|*.sav|All files (*.*)|*.*";
+            saveFile.FilterIndex = 2;
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(saveFile.FileName, listText);
+                MessageBox.Show("Your list has been save to an external file.\n\nFile Location:\t" + saveFile.FileName);
+                Settings.Default["SaveFilePath"] = saveFile.FileName;
+            }
         }
 
         private void LoadSaveFile()
         {
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\Brian Macdonald\Desktop\save.sav");
-            foreach (string listItem in lines)
+            if (File.Exists(savePath))
             {
-                lbxFileList.Items.Add(listItem, true);
+                string[] lines = System.IO.File.ReadAllLines(savePath);
+
+                foreach (string listItem in lines)
+                {
+                    lbxFileList.Items.Add(listItem, true);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Save file not found", "Warning");
+                lblSaveFileLocation.Text = "";
             }
 
         }
@@ -220,12 +242,38 @@ namespace TRG_File_Merge
 
         private void btnSaveClose_Click(object sender, EventArgs e)
         {
-            //Save settings
-            Settings.Default["CommentText"] = txtCommentText.Text;
-            Settings.Default.Save();
-            WriteToSaveFile();
+            // check to see if there is a path set
 
-            this.Close();
+            if (File.Exists(savePath))
+            {
+                foreach (string Item in lbxFileList.CheckedItems)
+                {
+                    //don't use delimiter if it's the last iteration of the foreach loop
+                    if (lbxFileList.CheckedItems.IndexOf(Item) == lbxFileList.CheckedItems.Count - 1)
+                    {
+                        delimiter = "";
+                    }
+
+                    //all files from folder are added to listbox
+                    saveText += (Item + "\n");
+                }
+
+                File.WriteAllText(savePath, saveText);
+                MessageBox.Show("Your settings have been saved.\n\nThank you!");
+                saveText = "";
+                
+
+                Settings.Default["CommentText"] = txtCommentText.Text;
+                Settings.Default["SaveFilePath"] = lblSaveFileLocation.Text;
+                Settings.Default.Save();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Save file location must be set first!");
+                SetSavePath();
+            }
+             
         }
 
         private void btnCheckAll_Click(object sender, EventArgs e)
@@ -264,6 +312,28 @@ namespace TRG_File_Merge
         private void frmFileMerge_Load(object sender, EventArgs e)
         {
             txtCommentText.Text = Settings.Default["CommentText"].ToString();
+            lblSaveFileLocation.Text = Settings.Default["SaveFilePath"].ToString();
+            savePath = Settings.Default["SaveFilePath"].ToString();
+            LoadSaveFile();
+        }
+
+        private void btnSetPath_Click(object sender, EventArgs e)
+        {
+            SetSavePath();
+        }
+
+        private void SetSavePath()
+        {
+            SaveFileDialog saveFilePath = new SaveFileDialog();
+            saveFilePath.Filter = "Save Files (*.sav)|*.sav";
+            
+            if (saveFilePath.ShowDialog() == DialogResult.OK)
+            {
+                string saveFileName = saveFilePath.FileName;
+                lblSaveFileLocation.Text = saveFileName;
+                savePath = saveFileName;
+                File.WriteAllText(saveFilePath.FileName, "");
+            }
         }
     }
 }

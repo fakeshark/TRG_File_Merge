@@ -38,18 +38,6 @@ namespace TRG_File_Merge.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ListBoxItems {
-            get {
-                return ((string)(this["ListBoxItems"]));
-            }
-            set {
-                this["ListBoxItems"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string SaveFilePath {
             get {
                 return ((string)(this["SaveFilePath"]));

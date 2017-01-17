@@ -5,9 +5,6 @@
     <Setting Name="CommentText" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ListBoxItems" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
     <Setting Name="SaveFilePath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
