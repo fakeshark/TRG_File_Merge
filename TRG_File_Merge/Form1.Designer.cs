@@ -49,19 +49,27 @@
             this.btnUncheckAll = new System.Windows.Forms.Button();
             this.btnSort = new System.Windows.Forms.Button();
             this.gbxSaveLocation = new System.Windows.Forms.GroupBox();
+            this.btnSetPath = new System.Windows.Forms.Button();
             this.lblSaveFileLocation = new System.Windows.Forms.Label();
             this.gbxListCount = new System.Windows.Forms.GroupBox();
-            this.btnSetPath = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.gbxMergeOptions.SuspendLayout();
             this.gbxSaveLocation.SuspendLayout();
             this.gbxListCount.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAddFile
             // 
-            this.btnAddFile.Location = new System.Drawing.Point(11, 13);
+            this.btnAddFile.Location = new System.Drawing.Point(13, 17);
             this.btnAddFile.Name = "btnAddFile";
-            this.btnAddFile.Size = new System.Drawing.Size(135, 37);
+            this.btnAddFile.Size = new System.Drawing.Size(122, 24);
             this.btnAddFile.TabIndex = 0;
             this.btnAddFile.Text = "&Add File";
             this.btnAddFile.UseVisualStyleBackColor = true;
@@ -69,8 +77,9 @@
             // 
             // btnMergeExport
             // 
+            this.btnMergeExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMergeExport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnMergeExport.BackgroundImage")));
-            this.btnMergeExport.Location = new System.Drawing.Point(853, 499);
+            this.btnMergeExport.Location = new System.Drawing.Point(896, 16);
             this.btnMergeExport.Name = "btnMergeExport";
             this.btnMergeExport.Size = new System.Drawing.Size(124, 110);
             this.btnMergeExport.TabIndex = 15;
@@ -81,9 +90,9 @@
             // 
             // btnAddFolder
             // 
-            this.btnAddFolder.Location = new System.Drawing.Point(152, 13);
+            this.btnAddFolder.Location = new System.Drawing.Point(141, 17);
             this.btnAddFolder.Name = "btnAddFolder";
-            this.btnAddFolder.Size = new System.Drawing.Size(131, 37);
+            this.btnAddFolder.Size = new System.Drawing.Size(118, 24);
             this.btnAddFolder.TabIndex = 1;
             this.btnAddFolder.Text = "Add &Folder";
             this.btnAddFolder.UseVisualStyleBackColor = true;
@@ -91,13 +100,15 @@
             // 
             // gbxMergeOptions
             // 
+            this.gbxMergeOptions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbxMergeOptions.Controls.Add(this.txtCommentText);
             this.gbxMergeOptions.Controls.Add(this.radioButton1);
             this.gbxMergeOptions.Controls.Add(this.rbtCommentDelimiter);
             this.gbxMergeOptions.Controls.Add(this.rbtSpaceDelimiter);
-            this.gbxMergeOptions.Location = new System.Drawing.Point(12, 544);
+            this.gbxMergeOptions.Location = new System.Drawing.Point(6, 64);
             this.gbxMergeOptions.Name = "gbxMergeOptions";
-            this.gbxMergeOptions.Size = new System.Drawing.Size(835, 65);
+            this.gbxMergeOptions.Size = new System.Drawing.Size(862, 65);
             this.gbxMergeOptions.TabIndex = 18;
             this.gbxMergeOptions.TabStop = false;
             this.gbxMergeOptions.Text = "File Merge Options:  ";
@@ -162,7 +173,8 @@
             // 
             // btnClearList
             // 
-            this.btnClearList.Location = new System.Drawing.Point(647, 499);
+            this.btnClearList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClearList.Location = new System.Drawing.Point(667, 16);
             this.btnClearList.Name = "btnClearList";
             this.btnClearList.Size = new System.Drawing.Size(96, 44);
             this.btnClearList.TabIndex = 2;
@@ -172,7 +184,7 @@
             // 
             // btnMoveUp
             // 
-            this.btnMoveUp.Location = new System.Drawing.Point(11, 499);
+            this.btnMoveUp.Location = new System.Drawing.Point(6, 16);
             this.btnMoveUp.Name = "btnMoveUp";
             this.btnMoveUp.Size = new System.Drawing.Size(108, 44);
             this.btnMoveUp.TabIndex = 8;
@@ -182,7 +194,8 @@
             // 
             // btnRemoveFile
             // 
-            this.btnRemoveFile.Location = new System.Drawing.Point(749, 499);
+            this.btnRemoveFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRemoveFile.Location = new System.Drawing.Point(769, 16);
             this.btnRemoveFile.Name = "btnRemoveFile";
             this.btnRemoveFile.Size = new System.Drawing.Size(98, 44);
             this.btnRemoveFile.TabIndex = 9;
@@ -192,7 +205,7 @@
             // 
             // btnMoveDown
             // 
-            this.btnMoveDown.Location = new System.Drawing.Point(125, 499);
+            this.btnMoveDown.Location = new System.Drawing.Point(120, 16);
             this.btnMoveDown.Name = "btnMoveDown";
             this.btnMoveDown.Size = new System.Drawing.Size(108, 44);
             this.btnMoveDown.TabIndex = 10;
@@ -202,21 +215,25 @@
             // 
             // lbxFileList
             // 
+            this.lbxFileList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbxFileList.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.lbxFileList.FormattingEnabled = true;
-            this.lbxFileList.Location = new System.Drawing.Point(12, 99);
+            this.lbxFileList.Location = new System.Drawing.Point(6, 102);
             this.lbxFileList.Name = "lbxFileList";
             this.lbxFileList.ScrollAlwaysVisible = true;
-            this.lbxFileList.Size = new System.Drawing.Size(965, 394);
+            this.lbxFileList.Size = new System.Drawing.Size(1014, 499);
             this.lbxFileList.TabIndex = 7;
             this.lbxFileList.SelectedIndexChanged += new System.EventHandler(this.lbxFileList_SelectedIndexChanged);
             // 
             // btnSaveClose
             // 
+            this.btnSaveClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSaveClose.BackColor = System.Drawing.Color.NavajoWhite;
-            this.btnSaveClose.Location = new System.Drawing.Point(414, 13);
+            this.btnSaveClose.Location = new System.Drawing.Point(453, 13);
             this.btnSaveClose.Name = "btnSaveClose";
-            this.btnSaveClose.Size = new System.Drawing.Size(105, 36);
+            this.btnSaveClose.Size = new System.Drawing.Size(105, 25);
             this.btnSaveClose.TabIndex = 3;
             this.btnSaveClose.Text = "&Save && Close";
             this.btnSaveClose.UseVisualStyleBackColor = false;
@@ -224,9 +241,9 @@
             // 
             // btnCheckAll
             // 
-            this.btnCheckAll.Location = new System.Drawing.Point(11, 55);
+            this.btnCheckAll.Location = new System.Drawing.Point(13, 47);
             this.btnCheckAll.Name = "btnCheckAll";
-            this.btnCheckAll.Size = new System.Drawing.Size(135, 37);
+            this.btnCheckAll.Size = new System.Drawing.Size(122, 24);
             this.btnCheckAll.TabIndex = 4;
             this.btnCheckAll.Text = "Check All";
             this.btnCheckAll.UseVisualStyleBackColor = true;
@@ -234,9 +251,9 @@
             // 
             // btnUncheckAll
             // 
-            this.btnUncheckAll.Location = new System.Drawing.Point(152, 55);
+            this.btnUncheckAll.Location = new System.Drawing.Point(141, 47);
             this.btnUncheckAll.Name = "btnUncheckAll";
-            this.btnUncheckAll.Size = new System.Drawing.Size(131, 37);
+            this.btnUncheckAll.Size = new System.Drawing.Size(118, 24);
             this.btnUncheckAll.TabIndex = 5;
             this.btnUncheckAll.Text = "Uncheck All";
             this.btnUncheckAll.UseVisualStyleBackColor = true;
@@ -244,7 +261,7 @@
             // 
             // btnSort
             // 
-            this.btnSort.Location = new System.Drawing.Point(239, 499);
+            this.btnSort.Location = new System.Drawing.Point(234, 16);
             this.btnSort.Name = "btnSort";
             this.btnSort.Size = new System.Drawing.Size(108, 44);
             this.btnSort.TabIndex = 6;
@@ -254,20 +271,33 @@
             // 
             // gbxSaveLocation
             // 
+            this.gbxSaveLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbxSaveLocation.Controls.Add(this.btnSetPath);
             this.gbxSaveLocation.Controls.Add(this.lblSaveFileLocation);
             this.gbxSaveLocation.Controls.Add(this.btnSaveClose);
-            this.gbxSaveLocation.Location = new System.Drawing.Point(451, 8);
+            this.gbxSaveLocation.Location = new System.Drawing.Point(445, 15);
             this.gbxSaveLocation.Name = "gbxSaveLocation";
-            this.gbxSaveLocation.Size = new System.Drawing.Size(526, 85);
+            this.gbxSaveLocation.Size = new System.Drawing.Size(575, 78);
             this.gbxSaveLocation.TabIndex = 19;
             this.gbxSaveLocation.TabStop = false;
             this.gbxSaveLocation.Text = "Save file location:  ";
             // 
+            // btnSetPath
+            // 
+            this.btnSetPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSetPath.Location = new System.Drawing.Point(453, 47);
+            this.btnSetPath.Name = "btnSetPath";
+            this.btnSetPath.Size = new System.Drawing.Size(105, 25);
+            this.btnSetPath.TabIndex = 21;
+            this.btnSetPath.Text = "Set Save Path";
+            this.btnSetPath.UseVisualStyleBackColor = true;
+            this.btnSetPath.Click += new System.EventHandler(this.btnSetPath_Click);
+            // 
             // lblSaveFileLocation
             // 
             this.lblSaveFileLocation.AutoSize = true;
-            this.lblSaveFileLocation.Location = new System.Drawing.Point(6, 47);
+            this.lblSaveFileLocation.Location = new System.Drawing.Point(17, 47);
             this.lblSaveFileLocation.Name = "lblSaveFileLocation";
             this.lblSaveFileLocation.Size = new System.Drawing.Size(16, 13);
             this.lblSaveFileLocation.TabIndex = 20;
@@ -277,42 +307,73 @@
             // 
             this.gbxListCount.Controls.Add(this.lblFilesListed);
             this.gbxListCount.Controls.Add(this.lblActiveFiles);
-            this.gbxListCount.Location = new System.Drawing.Point(289, 8);
+            this.gbxListCount.Location = new System.Drawing.Point(284, 16);
             this.gbxListCount.Name = "gbxListCount";
-            this.gbxListCount.Size = new System.Drawing.Size(155, 85);
+            this.gbxListCount.Size = new System.Drawing.Size(155, 77);
             this.gbxListCount.TabIndex = 20;
             this.gbxListCount.TabStop = false;
             this.gbxListCount.Text = "List item Count:  ";
             // 
-            // btnSetPath
+            // groupBox1
             // 
-            this.btnSetPath.Location = new System.Drawing.Point(414, 55);
-            this.btnSetPath.Name = "btnSetPath";
-            this.btnSetPath.Size = new System.Drawing.Size(105, 23);
-            this.btnSetPath.TabIndex = 21;
-            this.btnSetPath.Text = "Set Save Path";
-            this.btnSetPath.UseVisualStyleBackColor = true;
-            this.btnSetPath.Click += new System.EventHandler(this.btnSetPath_Click);
+            this.groupBox1.Controls.Add(this.btnMergeExport);
+            this.groupBox1.Controls.Add(this.btnRemoveFile);
+            this.groupBox1.Controls.Add(this.btnClearList);
+            this.groupBox1.Controls.Add(this.btnSort);
+            this.groupBox1.Controls.Add(this.gbxMergeOptions);
+            this.groupBox1.Controls.Add(this.btnMoveDown);
+            this.groupBox1.Controls.Add(this.btnMoveUp);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Location = new System.Drawing.Point(0, 614);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1028, 135);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.AutoSize = true;
+            this.groupBox2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox2.Controls.Add(this.lbxFileList);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1028, 614);
+            this.groupBox2.TabIndex = 22;
+            this.groupBox2.TabStop = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnAddFolder);
+            this.groupBox3.Controls.Add(this.btnUncheckAll);
+            this.groupBox3.Controls.Add(this.btnAddFile);
+            this.groupBox3.Controls.Add(this.btnCheckAll);
+            this.groupBox3.Location = new System.Drawing.Point(6, 8);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(272, 85);
+            this.groupBox3.TabIndex = 23;
+            this.groupBox3.TabStop = false;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.gbxSaveLocation);
+            this.groupBox4.Controls.Add(this.groupBox3);
+            this.groupBox4.Controls.Add(this.gbxListCount);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox4.Location = new System.Drawing.Point(0, 0);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(1028, 96);
+            this.groupBox4.TabIndex = 24;
+            this.groupBox4.TabStop = false;
             // 
             // frmFileMerge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(989, 621);
-            this.Controls.Add(this.gbxListCount);
-            this.Controls.Add(this.gbxSaveLocation);
-            this.Controls.Add(this.btnSort);
-            this.Controls.Add(this.btnCheckAll);
-            this.Controls.Add(this.btnUncheckAll);
-            this.Controls.Add(this.btnClearList);
-            this.Controls.Add(this.lbxFileList);
-            this.Controls.Add(this.btnMoveDown);
-            this.Controls.Add(this.btnRemoveFile);
-            this.Controls.Add(this.btnMoveUp);
-            this.Controls.Add(this.gbxMergeOptions);
-            this.Controls.Add(this.btnAddFolder);
-            this.Controls.Add(this.btnMergeExport);
-            this.Controls.Add(this.btnAddFile);
+            this.ClientSize = new System.Drawing.Size(1028, 749);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmFileMerge";
             this.Text = "TRG File Merge";
@@ -323,7 +384,12 @@
             this.gbxSaveLocation.PerformLayout();
             this.gbxListCount.ResumeLayout(false);
             this.gbxListCount.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -351,6 +417,10 @@
         private System.Windows.Forms.Label lblSaveFileLocation;
         private System.Windows.Forms.GroupBox gbxListCount;
         private System.Windows.Forms.Button btnSetPath;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }
 
